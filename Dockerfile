@@ -14,7 +14,8 @@ RUN pip install sympy
 RUN pip install networkx matplotlib pydotplus
 RUN apt install -y graphviz
 RUN apt install -y python-dev libgraphviz-dev pkg-config
-RUN pip install torch scikit-learn 
+RUN pip install torch
+RUN pip install scikit-learn 
 # ARG NB_USER=dsii
 # ARG NB_UID=1000
 # ENV USER ${NB_USER}
