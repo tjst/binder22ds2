@@ -3,7 +3,6 @@ ENV DEBIAN_FRONTEND=noninteractive
 RUN echo '* libraries/restart-without-asking boolean true' | debconf-set-selections
 RUN apt-get update && apt-get install -y curl
 RUN apt install -y tzdata
-# RUN apt-get install -y node.js
 RUN apt install -y curl python3.8 python3-pip
 RUN pip install jupyterlab 
 RUN pip install plotly
@@ -15,12 +14,6 @@ RUN pip install sympy
 RUN pip install networkx matplotlib pydotplus
 RUN apt install -y graphviz
 RUN apt install -y python-dev libgraphviz-dev pkg-config
-# RUN apt-get install -y npm
-# RUN npm install -g n
-# RUN n stable
-# RUN jupyter labextension install jupyterlab-plotly
-# RUN jupyter labextension install @jupyter-widgets/jupyterlab-manager --minimize=False
-# RUN jupyter labextension install @jupyter-widgets/jupyterlab-manager plotlywidget
 RUN pip install torch scikit-learn 
 # ARG NB_USER=dsii
 # ARG NB_UID=1000
@@ -42,3 +35,11 @@ USER root
 RUN chown -R 1000 ${HOME}
 USER dsii
 RUN cd ${HOME}
+USER root
+RUN apt-get install -y node.js
+RUN apt-get install -y npm
+RUN npm install -g n
+RUN n stable
+RUN jupyter labextension install jupyterlab-plotly
+RUN jupyter labextension install @jupyter-widgets/jupyterlab-manager --minimize=False
+RUN jupyter labextension install @jupyter-widgets/jupyterlab-manager plotlywidget
