@@ -22,7 +22,7 @@ RUN jupyter labextension install jupyterlab-plotly
 RUN jupyter labextension install @jupyter-widgets/jupyterlab-manager --minimize=False
 #RUN jupyter labextension install @jupyter-widgets/jupyterlab-manager plotlywidget
 RUN pip install torch scikit-learn 
-ARG NB_USER=dsii
+ARG NB_USER="dsii"
 ARG NB_UID=1000
 ENV USER ${NB_USER}
 ENV NB_UID ${NB_UID}
@@ -32,7 +32,7 @@ RUN adduser --disabled-password \
     --uid ${NB_UID} \
     ${NB_USER}
 # RUN echo "dsii:dsii" | chpasswd
-RUN gpasswd -a "dsii" sudo
+# RUN gpasswd -a "dsii" sudo
 RUN mkdir -p ${HOME}
 # Make sure the contents of our repo are in ${HOME}
 # COPY . ${HOME}
