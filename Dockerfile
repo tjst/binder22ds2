@@ -15,9 +15,9 @@ RUN pip install sympy
 RUN pip install networkx matplotlib pydotplus
 RUN apt install -y graphviz
 RUN apt install -y python-dev libgraphviz-dev pkg-config
-RUN apt-get install -y npm
-RUN npm install -g n
-RUN n stable
+# RUN apt-get install -y npm
+# RUN npm install -g n
+# RUN n stable
 # RUN jupyter labextension install jupyterlab-plotly
 RUN jupyter labextension install @jupyter-widgets/jupyterlab-manager --minimize=False
 # RUN jupyter labextension install @jupyter-widgets/jupyterlab-manager plotlywidget
