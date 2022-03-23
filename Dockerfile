@@ -39,8 +39,8 @@ RUN cd ${HOME}
 USER root
 RUN apt-get install -y node.js
 RUN apt-get install -y npm
-# RUN npm install -g n
-# RUN n stable
+RUN npm install -g n
+RUN n stable
 # RUN jupyter labextension install jupyterlab-plotly
 # RUN jupyter labextension install @jupyter-widgets/jupyterlab-manager --minimize=False
 # RUN jupyter labextension install @jupyter-widgets/jupyterlab-manager plotlywidget
