@@ -19,7 +19,7 @@ RUN apt install -y python-dev libgraphviz-dev pkg-config
 # RUN npm install -g n
 # RUN n stable
 # RUN jupyter labextension install jupyterlab-plotly
-RUN jupyter labextension install @jupyter-widgets/jupyterlab-manager --minimize=False
+# RUN jupyter labextension install @jupyter-widgets/jupyterlab-manager --minimize=False
 # RUN jupyter labextension install @jupyter-widgets/jupyterlab-manager plotlywidget
 RUN pip install torch scikit-learn 
 # ARG NB_USER=dsii
