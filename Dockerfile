@@ -31,7 +31,7 @@ RUN adduser --disabled-password \
     --gecos "Default user" \
     --uid ${NB_UID} \
     ${NB_USER}
-RUN echo "dsii:dsii" | chpasswd
+# RUN echo "dsii:dsii" | chpasswd
 RUN gpasswd -a "dsii" sudo
 RUN mkdir -p ${HOME}
 # Make sure the contents of our repo are in ${HOME}
