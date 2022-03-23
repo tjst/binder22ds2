@@ -3,7 +3,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 RUN echo '* libraries/restart-without-asking boolean true' | debconf-set-selections
 RUN apt-get update && apt-get install -y curl
 RUN apt install -y tzdata
-RUN apt-get install -y node.js
+# RUN apt-get install -y node.js
 RUN apt install -y curl python3.8 python3-pip
 RUN pip install jupyterlab 
 RUN pip install plotly
